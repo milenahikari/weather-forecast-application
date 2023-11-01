@@ -8,8 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // Criamos nossa view programaticamente
-    private let customView = UIView(frame: .zero)
+    // Criamos nossa view programaticamente utilizando lazy var só será criada quando for feita a primeira referencia e apenas uma vez - nao ira alocar na memoria antes do uso
+    private lazy var customView: UIView = {
+        let view = UIView(frame: .zero)
+        
+        view.backgroundColor = .black
+        
+        // Reseta a constraints que foram setadas automaticamente
+        view.translatesAutoresizingMaskIntoConstraints = false
+       return view
+    }()
 
     override func viewDidLoad() {
         // É executado sempre que a ViewController é carregada e apenas 1 vez
@@ -20,12 +28,6 @@ class ViewController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = .red
-        
-        // Atalho para utilizar a cor do UIColor
-        customView.backgroundColor = .black
-        
-        // Reseta a constraints que foram setadas automaticamente
-        customView.translatesAutoresizingMaskIntoConstraints = false
         
         setHierarchy()
         setConstraints()
