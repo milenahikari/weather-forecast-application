@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // Criamos nossa view programaticamente
+    private let customView = UIView(frame: .zero)
 
     override func viewDidLoad() {
         // É executado sempre que a ViewController é carregada e apenas 1 vez
@@ -19,12 +21,29 @@ class ViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = .red
         
-        let customView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        
         // Atalho para utilizar a cor do UIColor
         customView.backgroundColor = .black
         
+        // Reseta a constraints que foram setadas automaticamente
+        customView.translatesAutoresizingMaskIntoConstraints = false
+        
+        setHierarchy()
+        setConstraints()
+    }
+    
+    private func setHierarchy() {
+        // Adicionamos a customView na view principal
         view.addSubview(customView)
+    }
+    
+    private func setConstraints() {
+        // Criamos constraints para definir o posicionamento
+        NSLayoutConstraint.activate([
+            customView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            customView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
+            customView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
+            customView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100)
+        ])
     }
 
 
