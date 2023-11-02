@@ -42,7 +42,6 @@
 		38AE65792AF1C5670026C1DD = {
 			isa = PBXGroup;
 			children = (
-				38E58F212AF43F9500BA53DF /* Color+Extensions.swift */,
 				38AE65842AF1C5680026C1DD /* Weather App */,
 				38AE65832AF1C5680026C1DD /* Products */,
 			);
@@ -61,6 +60,7 @@
 			children = (
 				38AE65852AF1C5680026C1DD /* AppDelegate.swift */,
 				38AE65872AF1C5680026C1DD /* SceneDelegate.swift */,
+				38E58F212AF43F9500BA53DF /* Color+Extensions.swift */,
 				38AE65892AF1C5680026C1DD /* ViewController.swift */,
 				38E58F1F2AF4306400BA53DF /* HourlyForecastCollectionViewCell.swift */,
 				38AE658E2AF1C56A0026C1DD /* Assets.xcassets */,

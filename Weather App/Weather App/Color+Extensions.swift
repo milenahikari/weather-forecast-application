@@ -11,5 +11,5 @@ import UIKit
 extension UIColor {
     static let primaryColor = UIColor(named: "primaryColor")
     static let contrastColor = UIColor(named: "contrastColor")
-    static let softGrayColor = UIColor(named: "softGray")
+    static let softGrayColor = UIColor(named: "softGrayColor")
 }
