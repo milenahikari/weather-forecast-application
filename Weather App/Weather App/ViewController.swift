@@ -8,12 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private var backgroundColor = "background"
+    private var primaryColor = "primaryColor"
+    private var sunIcon = "sunIcon"
+    
+    
     // Criamos nossa view programaticamente utilizando lazy var só será criada quando for feita a primeira referencia e apenas uma vez - nao ira alocar na memoria antes do uso
     private lazy var backgroundView: UIImageView = {
         let imageView = UIImageView()
         
         // Definindo imagem de fundo passando o nome da imagem nos assests
-        imageView.image = UIImage(named: "background")
+        imageView.image = UIImage(named: backgroundColor)
         
         // Redimensiona a imagem para preencher o espaço proporcionalmente
         imageView.contentMode = .scaleAspectFill
@@ -37,7 +42,7 @@ class ViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 20)
         label.text = "São Paulo"
         label.textAlignment = .center
-        label.textColor = UIColor(named: "primaryColor")
+        label.textColor = UIColor(named: primaryColor)
         return label
     }()
     
@@ -47,14 +52,14 @@ class ViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 70, weight: .bold)
         label.text = "25°C"
         label.textAlignment = .left
-        label.textColor = UIColor(named: "primaryColor")
+        label.textColor = UIColor(named: primaryColor)
         return label
     }()
     
     private lazy var weatherIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "sunIcon")
+        imageView.image = UIImage(named: sunIcon)
         imageView.contentMode = .scaleAspectFit
         
         return imageView
